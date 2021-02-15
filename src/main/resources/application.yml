@@ -1,0 +1,10 @@
+graphql:
+  servlet:
+    mapping: /movies
+    enabled: true
+    cors-enabled: true
+graphiql:
+  mapping: /graphiql
+  endpoint:
+    graphql: /movies
+  page-title: GraphiQL Playground

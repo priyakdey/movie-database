@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Component
@@ -36,5 +37,13 @@ public class MovieRepository {
                 .title(title)
                 .overview(overview)
                 .build();
+    }
+
+    public List<Movie> movies(Integer size, Integer page) {
+        return movies
+                .stream()
+                .skip(page * size)
+                .limit(size)
+                .collect(Collectors.toList());
     }
 }

@@ -1,0 +1,24 @@
+schema {
+    query: Query
+}
+
+"""
+Root Query Type
+"""
+type Query {
+    """
+    Get a list of <size> movies from page <page>
+    """
+    movies(size: Int, page: Int): [Movie]!
+#    movieById(id: ID!): Movie
+#    movieByTitle(title: String!): Movie
+}
+
+"""
+Movie is the Root type which contains all movie related information
+"""
+type Movie {
+    id: ID!
+    title: String!
+    overview: String!
+}
